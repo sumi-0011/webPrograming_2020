@@ -1,0 +1,17 @@
+<html>
+로그인 및 회원 가입 하기
+<p>
+<form method="POST">
+  <label for="username">아이디:</label><br>
+  <input type="text" id="id" name="id" pattern="^[A-Za-z0-9]{6,15}"><br>
+  <label for="pwd">비밀번호:</label><br>
+  <input type="password" id="pwd" name="pwd" pattern="^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*" required><br><br>
+  <input type="submit" value="로그인" formaction="login.php" >  
+  <input type="submit" value="회원 가입" formaction="join.php">
+  <input type="reset">
+
+ 
+</form>
+</p>
+
+</html>
