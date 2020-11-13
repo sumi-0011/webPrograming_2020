@@ -4,132 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>main</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            padding: 10px;
-            
-        }
-
-        header {
-            /* background-color: aquamarine; */
-            padding-left: 20px;
-            font-size: 40px;
-            width: 50px;
-        }
-
-        nav {
-            flex-direction: row;
-            /* background-color: blue;   */
-        
-            padding: 10px 20px 10px 20px;
-            border-bottom: 3px solid black;
-        }
-
-        #menu_list {
-            margin: 0px;
-            padding: 0px;
-            list-style: none;
-            flex: none;
-        }
-        #menu_list li {
-         
-            margin-left: 5px;
-            margin-right: 20px;
-            float: left;
-        } 
-        #menu_side {
-            border-right: 2px solid black;
-            list-style: none;
-            flex: none;
-            margin: 0px;
-            margin-top: 10px;
-            padding: 5px;
-            padding-left: 15px;
-            
-        }
-        #menu_side li {
-            margin: 10px 0px 10px 10px;
-         
-           
-        }
-        #search_BT {
-            /* margin-left: auto; */
-            float: right;
-
-        }
-
-        #content {
-            display: flex;
-          
-            flex: 1;
-            /* flex: 1 1 0 */
-            overflow: auto;
-        }
-
-        aside {
-            /* background-color: yellow; */
-            width: 200px;
-            
-        }
-
-        section {
-            background-color: cornflowerblue;
-            flex: auto;
-        }
-
-        footer {
-            background-color: tomato;
-            position: relative;
-            clear: both;
-        }
-
-        span {
-            background-color: hotpink;
-        }
-    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/menu.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+  
 </head>
 
 <body>
-    <header>
-        main
-    </header>
-    <nav>
-        <ul id="menu_list">
-            <li><a href="./join.html">join</a></li>
-            <li>login</li>
-            <li>shopping cart</li>  
-            <li>order</li>  
-            <li>my page</li>
-        </ul>
-        <input type="button" value="검색" id="search_BT">
-    </nav>
-    <div id="content">
-       
-        <aside>
-            <ul id="menu_side">
-                <li>best</li>
-                <li>fashion</li>
-                <li>flower</li>
-                <li>living</li>
-                <li>food</li>
-                <li>keword</li>
-            </ul>
-            <ul>
-                <li>Q&A</li>    
-                <li>Review</li>
-            </ul>
-        </aside>
+    <header ></header>
+    <nav ></nav>
+    <div id="main_content" >
+        <aside></aside>
         <section>
-            <p> 페이지 본문</p>
+            
         </section>
     </div>
-    <footer>
-        <p>footer</p>
-    </footer>
 </body>
-
+<script src="./menu/menu_load.js"></script>
+   
 </html>

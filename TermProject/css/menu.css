@@ -1,0 +1,81 @@
+body {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    padding: 0px ;
+    overflow: auto;
+
+}
+header {
+    /* background-color: aquamarine; */
+    margin: 10px 0px 0px 10px;
+    padding-left: 20px;
+    font-size: 40px;
+    height: 50px;
+    width: 50px;
+}
+
+nav {
+    margin: 10px 10px 0px 10px;
+    flex-direction: row;
+    /* background-color: blue;   */
+    padding: 10px 20px 10px 20px;
+    border-bottom: 3px solid black;
+}
+
+#menu_list {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    flex: none;
+}
+#menu_list li {
+    margin-left: 5px;
+    margin-right: 20px;
+    float: left;
+} 
+.menu_side {
+    list-style: none;
+    flex: none;
+    margin: 0px;
+    padding: 5px;
+    padding-left: 15px;
+    
+}
+.menu_side li {
+    margin: 10px 0px 10px 10px;
+}
+#search_BT {
+    /* margin-left: auto; */
+    float: right;
+}
+#main_content {
+    margin: 10px 10px 10px 10px;
+    display: flex;
+    flex: 1;
+    /* flex: 1 1 0 */
+    overflow: auto;
+}
+aside {
+    /* background-color: yellow; */
+    width: 150px;
+    border-right: 2px solid black;
+}
+footer {
+  
+    margin-top: auto;
+    margin-left: 10px;
+    border-top: 3px solid black;
+    height: 50px;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+  
+}
+h1 {
+    text-align: center;
+}
