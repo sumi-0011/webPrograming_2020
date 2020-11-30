@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step2</title>
+    <link rel="stylesheet" href="../css/menu.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <style>
+        .div, .div1 {
+            width: 400px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        .div1 {
+            height: 50px;
+        }#show {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <header ></header>
+    <nav ></nav>
+    <div id="main_content" >
+        <div>인원 좌석 선택
+            <div class="div1">
+                인원선택 <input type="number">    
+            </div>
+            <div class="div">
+                좌석선택
+            </div>
+            <div id="show">
+                인원 : 1명
+                좌석 : A열 10번 좌석
+            </div>
+            <br>
+            <input type="button" value="결제선택" id="changePage_pay">
+
+        </div>
+    </div>
+    <footer></footer>
+</body>
+<!-- <script src="./ticket_step2.js"></script>
+ -->
+<script>
+    window.onload =function() {
+    document.getElementById('changePage_pay').addEventListener("click",function() {
+        location.href = "./ticket_step3.html"
+    });
+    $(document).ready(function() {
+    $("header").load("../menu/header.html");
+    $("nav").load("../menu/nav.html");
+    // $("aside").load("./menu/aside_ticket.html");
+    $("footer").load("../menu/footer.html");
+})
+
+}
+</script>
+
+</html>

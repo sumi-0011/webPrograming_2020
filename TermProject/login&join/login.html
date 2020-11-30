@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/menu.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <!-- <script src="http://www.w3schools.com/lib/w3data.js"></script>  -->
+    <link rel="stylesheet" href="../css/join&login.css">
+</head>
+
+<body>
+    <!-- <div id="header"></div> -->
+    <header></header>
+    <nav></nav>
+    <div id="main_content">
+        <aside></aside>
+        <section>
+            <h1>login</h1>
+            <div id="login_box">
+                <form action="login.php" method="POST">
+                    <p><input type="text" name="login_id" id="login_id" placeholder="아이디"></p>
+                    <!-- 비밀번호 패턴에 일치하지 않게 입력하면 오류가 뜨게함 -->
+                    <p> <input type="password" name="login_pwd" id="login_pwd" placeholder="비밀번호"
+                            pattern="^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*" required></p>
+                    <input type="button" value="로그인" id="login_bt">
+                    <br>
+                    <br>
+                    <input type="button" value="회원가입" id="join_bt">
+                    <input type="button" value="아이디찾기" id="find_id">
+                    <input type="button" value="비밀번호찾기" id="find_pwd">
+
+
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="./login.js"></script>
+<script src="../menu/menu_load.js"></script>
+
+<!-- <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /* Loop through a collection of all HTML elements: */
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+              if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+              if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+              /* Remove the attribute, and call this function once more: */
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+        }
+      }
+    }
+    // includeHTML();
+    w3IncludeHtml();
+    </script> --> 
+</html>

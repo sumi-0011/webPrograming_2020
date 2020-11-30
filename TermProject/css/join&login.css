@@ -1,0 +1,47 @@
+#content {
+    padding: 10px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+#content form #join_submit{
+    float: right;
+}
+.label {
+    display: inline-block;
+    width: 150px;
+} 
+
+#login_id, #login_pwd {
+    width: 100%;
+    height: 20px;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+#login_bt {
+    float: right;
+    border:1px solid gray;
+    border-radius: 10px;
+    background-color: transparent;
+    width: 100px;
+    height: 30px;
+}
+#join_bt,  #find_id, #find_pwd{
+    width: 100px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+  
+}
+#login_box {
+   transform: translate(50%,0%);
+    text-align: center;
+    width: 50%;
+    /* background-color: aqua; */
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+} 

@@ -1,0 +1,2 @@
+(window.__LOADABLE_LOADED_CHUNKS__=window.__LOADABLE_LOADED_CHUNKS__||[]).push([[80],{w95p:function(n,r,a){"use strict";r.a=function rafSchd(n){var r=[],a=null,i=function wrapperFn(){for(var i=arguments.length,t=new Array(i),u=0;u<i;u++)t[u]=arguments[u];r=t,a||(a=requestAnimationFrame((function(){a=null,n.apply(void 0,r)})))};return i.cancel=function(){a&&(cancelAnimationFrame(a),a=null)},i}}}]);
+//# sourceMappingURL=80.4d92b05f069694ab1665.chunk.js.map

@@ -1,0 +1,29 @@
+ 
+        #img_content {
+            padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            width: 1200px;
+        }
+        .item {
+            /* width: 25%; */
+            margin: auto;
+            margin: 20px;
+            width: 250px;
+            height: 250px;
+            border: 1px solid black;
+          
+        }
+        /* 미디어 쿼리 사용하여 창 크기에따라 조절 */
+        @media(max-width:1400px) {
+            #img_content {
+                width: 750px;
+            }
+            .item {
+                width: 200px;
+                height: 200px;
+            }
+        }

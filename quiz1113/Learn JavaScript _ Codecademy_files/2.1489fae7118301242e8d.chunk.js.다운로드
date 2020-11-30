@@ -1,0 +1,2 @@
+(window.__LOADABLE_LOADED_CHUNKS__=window.__LOADABLE_LOADED_CHUNKS__||[]).push([[2],{cQ3R:function(e,n,t){"use strict";t.d(n,"a",(function(){return PageMeta}));var c=t("q1tI"),a=t.n(c),l=t("qhky");const PageMeta=({title:e,description:n,canonicalUrl:t})=>{const c="".concat(e," | ").concat("Codecademy");return a.a.createElement(l.a,null,e&&a.a.createElement("title",null,c),n&&a.a.createElement("meta",{name:"description",content:n}),t&&a.a.createElement("link",{rel:"canonical",href:t}))}}}]);
+//# sourceMappingURL=2.1489fae7118301242e8d.chunk.js.map

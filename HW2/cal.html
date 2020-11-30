@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+
+    <style>
+        table,
+        th,
+        td,
+        tr {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        #title {
+            text-align: center;
+            height: 20px;
+        }
+
+        #data {
+            height: 300px;
+        }
+
+        #join,
+        #logout {
+            float: right;
+        }
+
+        #modal {
+            position: absolute;
+            right: 120px;
+            top: 5px;
+            background-color: coral;
+            padding: 30px;
+            width: 300px;
+            box-shadow: 1px 1px 1px 1px gray;
+            height: 60px;
+            /* display: none; */
+        }
+
+        label {
+            display: inline-block;
+            width: 70px;
+        }
+
+        #loginBT {
+            position: absolute;
+            right: 200px;
+            margin: 5px;
+        }
+
+        #signInBt {
+            position: absolute;
+            right: 100px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <!-- 2. 할 일 추가, 수정, 삭제를 위한 버튼 -->
+        <input type="button" value="Add" id="add" disabled>
+        <!-- 1. 사용자의 로그인, 로그인 정보 확인, 회원가입을 위한 영역 -->
+        <input type="button" value="Logout" id="logout">
+        <input type="button" value="join" id="join">
+    </p>
+    <!-- 3. 주 단위로 보여지는 달력이며, 해야 할 일들을 날짜별로 나타내는 영역 -->
+    <table>
+        <caption>날짜 일</caption>
+        <tr id="title">
+            <td>(Sun)</td>
+            <td>(Mon)</td>
+            <td>(Tue)</td>
+            <td>(Wed)</td>
+            <td>(Thu)</td>
+            <td>(Fri)</td>
+            <td>(Sat)</td>
+        </tr>
+        <tr id="data">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div id="modal">
+
+        <label for="join_id">id </label>
+        <input type="text" name="join_id" id="join_id" pattern="^([A-Za-z0-9]){6,15}"> <br>
+        <label for="join_pwd">password</label>
+        <input type="password" name="join_pwd" id="join_pwd" pattern="^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*
+        ">
+        <br>
+        <input type="button" value="Login" id="loginBT">
+        <input type="button" value="SignIn" id="signInBt">
+    </div>
+</body>
+<script>
+    var modal_window = document.getElementById('modal');
+    var joinBT = document.getElementById('join');
+    var logoutBT = document.getElementById('logout');
+    window.onload = function () {
+        //join
+        joinBT.addEventListener("click", function () {
+            $('#modal').css("display", "block");
+        });
+    }
+
+</script>
+
+</html>

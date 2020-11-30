@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> 11월 27일 퀴즈 </title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="1127.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<script>
+ 
+</script>
+<body>
+  <!-- 1. 성적 평균 검색을 위한 영역 -->
+  <!-- "학생 이름" : 검색할 학생 이름을 입력하는 입력 박스 -->
+  학생 이름 : <input type="text" name="student_name" id="student_name"> <br><br>
+  <!-- "과목" : 평균을 낼 과목들을 선택하는 체크 박스 -->
+  <!-- 5개의 과목중 한개 이상을 선택 -->
+  과목 : <input type="checkbox" name="subject" id="Koeran">Koeran 
+  <input type="checkbox" name="subject" id="Math">Math 
+  <input type="checkbox" name="subject" id="English">English 
+  <input type="checkbox" name="subject" id="Society">Society 
+  <input type="checkbox" name="subject" id="History">History <br><br>
+  <!-- "제출" : 입력된 정보를 처리하기 위한 버튼 -->
+  <input type="button" value="제출" id="submitBt" name="submitBt" >
+  <br><br>
+
+  <!-- 2. 데이터 영역 : 7명 학생들의 각 과목별 점수표 -->
+  <!-- 2영역에 있던 데이터를 읽은 후, StudentInfo 객체 생성자를 이용하여 객체 인스턴스로 정의 , 
+  각 객체 인스턴스는 infoArray에 배열로 저장, 저장이 완료되면 2영역에 있는 점수표를 삭제  -->
+  <table id="table">
+    <tr>
+      <th>Name</th>
+      <th>Korean</th>
+      <th>Math</th>
+      <th>English</th>
+      <th>Society</th>
+      <th>History</th>
+    </tr>
+    <tr>
+      <td>홍길동</td>
+      <td>98</td>
+      <td>80</td>
+      <td>77</td>
+      <td>86</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <td>심순애</td>
+      <td>49</td>
+      <td>92</td>
+      <td>56</td>
+      <td>100</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <td>이순실</td>
+      <td>92</td>
+      <td>75</td>
+      <td>96</td>
+      <td>72</td>
+      <td>88</td>
+    </tr>
+    <tr>
+      <td>차태용</td>
+      <td>66</td>
+      <td>88</td>
+      <td>72</td>
+      <td>82</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>김진수</td>
+      <td>76</td>
+      <td>100</td>
+      <td>32</td>
+      <td>72</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>이기용</td>
+      <td>92</td>
+      <td>76</td>
+      <td>76</td>
+      <td>82</td>
+      <td>96</td>
+    </tr>
+    <tr>
+      <td>박진형</td>
+      <td>78</td>
+      <td>80</td>
+      <td>72</td>
+      <td>86</td>
+      <td>82</td>
+    </tr>
+  </table>
+</body>
+  <script src="./1127.js"></script>
+</html>

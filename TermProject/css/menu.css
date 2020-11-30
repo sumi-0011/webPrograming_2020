@@ -2,19 +2,48 @@ body {
     margin: 0px;
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 900px;
     height: 100vh;
     padding: 0px ;
     overflow: auto;
-
+    margin-left: auto;
+    margin-right: auto;
+ 
 }
+a {
+    color: black;
+}
+/* a태그 밑줄 없애줌 */
+a:link { color: black;text-decoration: none;}
+/* 이미 방문한 사이트도 black으로 */
+a:visited { color: black; text-decoration: none;}
+/* a태그에 마우스를 올려놨을떄의 색깔 */
+a:hover { color: blue; text-decoration: underline;}
+
 header {
+   
     /* background-color: aquamarine; */
     margin: 10px 0px 0px 10px;
+    /* display: inline-block; */
+    /* display: flex; */
+    /* flex-direction: row; */
     padding-left: 20px;
-    font-size: 40px;
-    height: 50px;
-    width: 50px;
+    padding-right: 20px;
+    height: 30px;
+    /* width: 60px; */
+   
+}
+header #title {
+    font-size:30px;
+    text-align:justify;
+    text-justify:inter-word; 
+    width: 100%;
+    /* background-color: blueviolet; */
+}
+header #login_page,#join_page {
+    margin-left: 5px;
+    margin-top: 10px;
+    float: right;
 }
 
 nav {
@@ -55,20 +84,23 @@ nav {
     margin: 10px 10px 10px 10px;
     display: flex;
     flex: 1;
-    /* flex: 1 1 0 */
-    overflow: auto;
+    width: 850px;
+    text-align: center;
+
 }
-aside {
-    /* background-color: yellow; */
-    width: 150px;
-    border-right: 2px solid black;
+section {
+    margin-left: auto;
+    margin-right: auto;
 }
 footer {
-  
     margin-top: auto;
     margin-left: 10px;
     border-top: 3px solid black;
     height: 50px;
+}
+aside {
+    width: 150px;
+    border: 1px solid black;
 }
 section {
     display: flex;
@@ -76,6 +108,21 @@ section {
     flex: 1 1 0;
   
 }
+
 h1 {
     text-align: center;
 }
+/* 
+#main_content {
+    margin: 10px 10px 10px 10px;
+    display: flex;
+    flex: 1;
+    /* flex: 1 1 0 */
+    /* overflow: auto; */
+/* } */ 
+/* 
+aside {
+    background-color: yellow;
+    width: 200px;
+    flex: 0 0 0;
+    /* border-right: 2px solid black; */

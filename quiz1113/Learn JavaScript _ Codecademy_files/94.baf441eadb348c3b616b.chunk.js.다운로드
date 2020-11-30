@@ -1,0 +1,2 @@
+(window.__LOADABLE_LOADED_CHUNKS__=window.__LOADABLE_LOADED_CHUNKS__||[]).push([[94],{"Fm/g":function(n,o,t){"use strict";var r=t("q1tI"),e=t("i8i4"),s=t.n(e);class Portal extends r.Component{componentDidMount(){this.props.onMount()}componentWillUnmount(){this.props.onUnmount()}render(){return s.a.createPortal(this.props.children,document.body)}}Portal.defaultProps={onMount:()=>{},onUnmount:()=>{}},o.a=Portal}}]);
+//# sourceMappingURL=94.baf441eadb348c3b616b.chunk.js.map
