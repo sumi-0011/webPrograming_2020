@@ -5,88 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-
-
-    <style>
-        table,
-        th,
-        td,
-        tr {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-
-        table {
-            width: 100%;
-        }
-
-        #title {
-            text-align: center;
-            height: 20px;
-        }
-
-        #data {
-            height: 300px;
-        }
-
-        #join,
-        #logout {
-            float: right;
-        }
-
-        #modal {
-            position: absolute;
-            right: 120px;
-            top: 5px;
-            background-color: coral;
-            padding: 30px;
-            width: 300px;
-            box-shadow: 1px 1px 1px 1px gray;
-            height: 60px;
-            /* display: none; */
-        }
-
-        label {
-            display: inline-block;
-            width: 70px;
-        }
-
-        #loginBT {
-            position: absolute;
-            right: 200px;
-            margin: 5px;
-        }
-
-        #signInBt {
-            position: absolute;
-            right: 100px;
-            margin: 5px;
-        }
-    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
+        <link rel="stylesheet" href="./calendar.css">
 </head>
 
 <body>
     <p>
         <!-- 2. 할 일 추가, 수정, 삭제를 위한 버튼 -->
-        <input type="button" value="Add" id="add" disabled>
+        <input type="button" value="Add" id="addBT" disabled="disabled">
         <!-- 1. 사용자의 로그인, 로그인 정보 확인, 회원가입을 위한 영역 -->
         <input type="button" value="Logout" id="logout">
         <input type="button" value="join" id="join">
+        <form action="./getcalendar.php" method="post">
+            <input type="submit" value="demo">
+        </form>
+        <input type="button" value="demoBT" id="demoBT">
     </p>
     <!-- 3. 주 단위로 보여지는 달력이며, 해야 할 일들을 날짜별로 나타내는 영역 -->
     <table>
-        <caption>날짜 일</caption>
+        <caption><span id="year"></span>년 <span id="month"> </span>월</caption>
         <tr id="title">
-            <td>(Sun)</td>
-            <td>(Mon)</td>
-            <td>(Tue)</td>
-            <td>(Wed)</td>
-            <td>(Thu)</td>
-            <td>(Fri)</td>
-            <td>(Sat)</td>
+            <td><span id="day1"></span>(Sun)</td>
+            <td><span id="day2"></span>(Mon)</td>
+            <td><span id="day3"></span>(Tue)</td>
+            <td><span id="day4"></span>(Wed)</td>
+            <td><span id="day5"></span>(Thu)</td>
+            <td><span id="day6"></span>(Fri)</td>
+            <td><span id="day7"></span>(Sat)</td>
         </tr>
         <tr id="data">
             <td></td>
@@ -100,28 +48,38 @@
     </table>
 
     <div id="modal">
-
-        <label for="join_id">id </label>
-        <input type="text" name="join_id" id="join_id" pattern="^([A-Za-z0-9]){6,15}"> <br>
-        <label for="join_pwd">password</label>
-        <input type="password" name="join_pwd" id="join_pwd" pattern="^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*
-        ">
-        <br>
-        <input type="button" value="Login" id="loginBT">
-        <input type="button" value="SignIn" id="signInBt">
+        <form method="POST">
+            <label for="join_id">id </label>
+            <input type="text" name="join_id" id="join_id" pattern="^([A-Za-z0-9]){6,15}"> <br>
+            <label for="join_pwd">password</label>
+            <input type="password" name="join_pwd" id="join_pwd"
+                pattern="^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*">
+            <br>
+            <input type="button" value="Login" id="loginBT">
+            <input type="button" value="SignIn" id="signInBt">
+        </form>
+    </div>
+    <div id="dateModal">
+       <form action="" method="post" id="dateForm"> 
+        <label for="input_date">date</label>    
+        <input type="date" name="input_date" id="input_date">
+        <input type="time" name="input_time" id="input_time"><br>
+        <label for="input_title">title</label>  
+        <input type="text" name="input_title" id="input_title"><br>
+        <label for="input_description">description</label>  
+        <input type="text" name="input_description" id="input_description"><br>
+        <!-- 할일을 저장하기 위한 버튼 -->
+        <input type="button" value="Save" id="date_saveBt" class="button" disabled="disabled">
+        <!-- 할일 내용을 수정하기 위한 버튼 -->
+        <input type="button" value="Update" id="date_updateBt" class="button" disabled="disabled">
+        <!-- 할 일을 삭제하기 위한 버튼 -->
+        <input type="button" value="Submit" id="date_submitBt" class="button" disabled="disabled">
+        <input type="button" value="Delete" id="date_deleteBt" class="button" disabled="disabled">
+        <!-- 입력을 서버에 전송하지 않고 입력박스를 사라지게 하는 버튼 -->
+        <input type="button" value="Cancel" id="date_cancelBt" class="button" disabled="disabled">
+       </form>
     </div>
 </body>
-<script>
-    var modal_window = document.getElementById('modal');
-    var joinBT = document.getElementById('join');
-    var logoutBT = document.getElementById('logout');
-    window.onload = function () {
-        //join
-        joinBT.addEventListener("click", function () {
-            $('#modal').css("display", "block");
-        });
-    }
-
-</script>
+<script src="./cal.js"></script>
 
 </html>

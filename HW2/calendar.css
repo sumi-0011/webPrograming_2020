@@ -1,0 +1,76 @@
+table,
+th,
+td,
+tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    width: 100%;
+}
+
+#title {
+    text-align: center;
+    height: 20px;
+}
+
+#data {
+    height: 300px;
+}
+
+#join,
+#logout {
+    float: right;
+}
+
+#modal {
+    display: none;
+    position: absolute;
+    right: 120px;
+    top: 5px;
+    background-color: coral;
+    padding: 30px;
+    width: 300px;
+    box-shadow: 1px 1px 1px 1px gray;
+    height: 60px;
+    
+}
+
+#modal label {
+    display: inline-block;
+    width: 70px;
+}
+
+#loginBT {
+    position: absolute;
+    right: 200px;
+    margin: 5px;
+}
+
+#signInBt {
+    position: absolute;
+    right: 100px;
+    margin: 5px;
+}
+.day {
+    color: red;
+}
+#dateModal {
+    position: absolute;
+    top: 5px;
+    left: 100px;
+    background-color: powderblue;
+    padding: 30px;
+    width: 450px;
+    box-shadow: 1px 1px 1px 1px gray;
+    /* display: none; */
+}
+#dateModal label {
+    display: inline-block;
+    width: 80px;
+}
+#dateModal .button {
+    position: relative;
+    left: 85px;
+}

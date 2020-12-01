@@ -29,7 +29,6 @@ function AjaxCall() {
 function createData() {
     var obj = {"title":$('#title').val(),"content":$('#content').val()};
     var sendData = JSON.stringify(obj);
-
     return sendData;
 }
 function createKey() {

@@ -23,7 +23,6 @@ if($bol ==false) {
   if (!isset($myObj)) {
     $myObj = new stdClass();
   }
-    
     $myObj->id=$name;
     $myObj->pw=$text;
     // $array = array('id'=>$name , "pw"=>$text);
