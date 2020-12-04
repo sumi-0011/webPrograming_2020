@@ -43,6 +43,7 @@ StudentInfo.prototype.avg = function () {
       return;
   } 
   else {
+    //그렇지 않다면 찾는다. 
     result = findAverge(index);
   }
   //과목 check를 하나도 하지 않은 경우

@@ -18,6 +18,8 @@
          if($a->id==$array['id']) {
              if($a->pwd==$array['pwd']) {
                $bol = true;
+               session_start();
+               $_SESSION['userId'] = $array['id'];
                 echo $array['id'];
              }
            

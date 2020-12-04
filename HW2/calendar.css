@@ -20,10 +20,16 @@ table {
 }
 
 #join,
-#logout {
+#logout
+{
     float: right;
+    margin-left: 5px;
 }
-
+#user {
+    /* display: inline-block; */
+    position: absolute;
+    right:  110px;
+}
 #modal {
     display: none;
     position: absolute;
@@ -53,7 +59,7 @@ table {
     right: 100px;
     margin: 5px;
 }
-.day {
+#day1,#day2,#day3,#day4,#day5,#day6,#day7 {
     color: red;
 }
 #dateModal {
@@ -73,4 +79,22 @@ table {
 #dateModal .button {
     position: relative;
     left: 85px;
+}
+.todo {
+    border: 1px solid black;
+    background-color: skyblue;
+    text-align: center;
+    border-top: 5px;
+    padding: 5px;
+    height: 30px;
+}
+.hidden {
+    /* display: inline-block;
+    visibility: hidden;
+    width: 0px;
+    height: 0px; */
+    display: none;
+}
+.todoText{
+    point-event: none;
 }
