@@ -5,15 +5,12 @@ function test_input($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
-$userId = test_input($_POST['userId']);
-$todoData = json_decode($_POST["todoData"]); 
+$userId = test_input($_POST['userId']);             //사용자 아이디
+$todoData = json_decode($_POST["todoData"]);        //추가할 할일 정보
 $todoArray = array('date'=>test_input($todoData->date), 'time'=>test_input($todoData->time),'title'=>test_input($todoData->title),'description'=>test_input($todoData->description));
 
-// $userId = "chacha00";
-// $todoArray = array('date'=>test_input($_POST['input_date']), 'time'=>test_input($_POST['input_time']),'title'=>test_input($_POST['input_title']),'description'=>test_input($_POST['input_description']));
-
 $file_name = $userId."_".substr($todoArray['date'],0,4).substr($todoArray['date'],5,2);
-$url = "./toDo/".$file_name.".json";
+$url = "./toDo/".$file_name.".json";                //url을 사용자아이디+날짜로 설정
 $bol = false;
 //할일 목록들은 날짜와 시간에 대해 중복된 값을 가지지 않는 것을 가정으로 한다. 
 //중복검사, 중복되는 것이 없으면 $bol  = false 
@@ -30,7 +27,8 @@ if(file_exists($url)) {
         }
     }
 }
-if($bol == false) {
+//시간이 중복되는 할일이 없을 경우에만 파일에 할일 정보를 저장해준다.
+if($bol == false) { 
     $json_data = json_encode($todoArray);
     file_put_contents($url,$json_data."\n",FILE_APPEND);
     echo $json_data;

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>HTML/CSS 실습 퀴즈</title>
+	<link rel="stylesheet" type="text/css" href="./quiz_1211.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<h1 id="header">뮤지컬 소개 페이지</h1>
+			<!-- 1 -->
+			<div class="col-sm-12 col-md-9" id="div1">
+				<h2>노트르담 드 파리</h2><br>
+				<img src="./poster.gif" alt="image" id="img" class="img-rounded">
+				<p>
+					한국에서 단 한번도 보지 못했던 프랑스 초연 20주년 기념 버전 <strong  id="paris">&lt;노트르담 드 파리></strong>!
+					이번 <strong>노트르담 드 파리</strong> 프렌치 오리지널 투어는 1998년 프랑스 초연 이후 20주년을 기념하여 제작된 새로운 버전으로 의상,
+					안무,
+					조명 등 디테일한
+					부분을 업그레이드 하여 더 견고하고 완벽해진 무대를 선보인다.
+					뮤지컬 <strong>노트르담 드 파리</strong>를 아름다운 프랑스어로 선보이는 오리지널 선율로 만나볼 수 있는 기회이다.<br>
+					<br>
+					오리지널 프롤로 役 ‘다니엘 라부아’의 귀환!
+					1998년 프랑스 초연의 오리지널 ‘프롤로’ 다니엘 라부아(Daniel Lavoie)가 다시 무대로 돌아와 여전히 강렬하지만 더욱 더 깊이 있는 캐릭터를 보여줄
+					예정이다.
+					지난 2015년 뮤지컬 <strong>노트르담 드 파리</strong> 프렌치 내한공연 때도 만나보지 못했던 오리지널 ‘프롤로’를 만나볼 기회이다.<br>
+					<br>
+					또 다시 전세계를 강타한 <strong>노트르담 드 파리</strong> 프렌치 오리지널 투어, 한국 상륙!
+					20주년 기념으로 제작된 뉴 프러덕션은 프랑스를 시작으로 대만, 레바논, 캐나다, 러시아, 이스탄불, 런던, 중국 투어까지 성공적으로 마치고
+					<strong>노트르담 드 파리</strong> 프렌치 오리지널 투어가 드디어 한국에 상륙한다. 뮤지컬 <strong>노트르담 드 파리</strong>는 23개국
+					누적 관객
+					1,500만명 이상을 만나온 전 세계를 강타한 대형 뮤지컬이다.<br>
+
+				</p>
+			</div>
+			<!-- 2 -->
+			<div class="col-sm-12 col-md-3" id="div2">
+				<h2>이벤트</h2>
+				<p>추첨을 통해 이벤트에 응모하신 분들께 티켓을 드립니다.</p>
+				<ul>
+					<li>응모기간 : <strong>2020.10.15 ~ 2020.11.9</strong></li>
+					<li>상품 : 티켓 (<strong>총 30명</strong>)</li>
+				</ul>
+				<button class="btn btn-primary btn-lg" id="applicationBt">응모 </button>
+				<h4>응모 현황</h4>
+				<p id="checkApplication">현재 미응모 상태입니다.</p>
+			</div>
+		<!-- </div>
+		<div class="row"> -->
+			<!-- 3 -->
+			<div class="col-sm-12 col-md-6" id="div3">
+				<h2>뮤지컬 안내</h2>
+				<div id="div_red"> 코로나19 관련 사회적 거리두기 2단계 격상에 따라 좌석 운영이 다음과 같이 변경됩니다.
+					<div id="div_orange"> 사회적 거리두기 2단계 지침에 따라 <strong id="seat_orange">'좌석 한칸
+								띄어앉기'</strong>를 시행합니다.</div>
+					<div id="div_blue">반드시 <strong class="color_blue">'마스크 착용'</strong>과<strong class="color_blue">'체온
+								측정'</strong>후에 입장해 주세요.</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<div class="row">
+					<!-- 4   -->
+					<div class="col-sm-6 col-md-12 " id="div4">
+						<h2>뮤지컬 정보</h2>
+						<br>
+						<dl>
+							<dt>
+								<em class="color_blue">장소</em>
+							</dt>
+							<dd>
+								블루스퀘어 인터파크홀
+							</dd>
+							<dt>
+								<em class="color_blue">기간</em>
+							</dt>
+							<dd>
+								2020.11.10 ~ 2021.01.17
+							</dd>
+							<dt>
+								<em class="color_blue">등급 / 시간</em>
+							</dt>
+							<dd>
+								8세 이상 / 150분
+							</dd>
+							<dt>
+								<em class="color_blue">출연</em>
+							</dt>
+							<dd>안젤로 델 베키오,조제 뒤푸르,엘하이다 다니,로미나 팔메리,리샤르 샤레스트,존 아이젠,다니엘 라부아,로베르 마리앙,
+								제이,이삭 엔지,지안마르코 스키아레띠,알리제 라랑드,샤를로트 비작크..
+							</dd>
+							<dt>
+								<em class="color_blue">공연시간</em>
+							</dt>
+							<dd> 화, 수, 목, 금요일 : 오후 8시 / 토요일 : 오후 2시, 오후 7시 / 일요일 : 오후 2시 (월요일 공연없음)
+							</dd>
+						</dl>
+					</div>
+					<!-- 5 -->
+					<div class="col-sm-6 col-md-12 " id="div5">
+						<h2>가격 정보</h2>
+						<table class="table">
+							<thead>
+								<tr id="table_head">
+									<th>구분</th>
+									<th>가격</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="color_ff9900">
+									<td >VIP석</td>
+									<td>160,000 원</td>
+								</tr>
+								<tr class="color_cc99ff">
+									<td>S석</td>
+									<td>100,000 원</td>
+								</tr>
+								<tr class="color_ccffcc">
+									<td>B석</td>
+									<td>60,000 원</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="quiz_1211.js"></script>
+</body>
+
+</html>
