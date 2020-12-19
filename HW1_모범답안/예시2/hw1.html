@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="hw1.css">
+    <title>상품 장바구니</title>
+  </head>
+  <body>
+    <i class="material-icons" id="shop-icon">shopping_cart</i>
+    <div class="delivery">
+      일반배송 : <input type="checkbox" id="normal-all-check">전체 선택
+      <input type="button" id="normal-select-delete" value="선택 삭제">
+      <input type="button" id="move-to-dawn" value="새벽 배송으로 이동">
+      <table>
+        <thead>
+          <tr>
+            <th>선택</th>
+            <th>상품 이미지</th>
+            <th>상품 이름</th>
+            <th>상품 개별 가격</th>
+            <th>상품 개수</th>
+            <th>상품 구매 가격</th>
+          </tr>
+        </thead>
+        <tbody id="normal-tbl"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5">총 가격</td>
+            <td id="normal-total-price">0</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="delivery">
+      새벽배송 : <input type="checkbox" id="dawn-all-check">전체 선택
+      <input type="button" id="dawn-select-delete" value="선택 삭제">
+      <input type="button" id="move-to-normal" value="일반 배송으로 이동">
+      <table>
+        <thead>
+          <tr>
+            <th>선택</th>
+            <th>상품 이미지</th>
+            <th>상품 이름</th>
+            <th>상품 개별 가격</th>
+            <th>상품 개수</th>
+            <th>상품 구매 가격</th>
+          </tr>
+        </thead>
+        <tbody id="dawn-tbl"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5">총 가격</td>
+            <td id="dawn-total-price">0</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="search">
+      상품 이름 : <input type="text" id="product-name" value=""><br>
+      가격 범위 : <input type="text" id="min-price" value=""> ~ <input type="text" id="max-price" value=""><br>
+      <input class="btn" type="button" id="search-btn" value="검색">
+      <input class="btn" type="button" id="change-original-color" value="원래 색으로 바꾸기">
+    </div>
+    <!-- 상품 장바구니 등록 입력 폼 start -->
+    <div id="regist">
+      <span class="regist-header">상품 장바구니 등록</span><br>
+      상품 이미지 : <input type="file" name="fname" id="fname"><br>
+      상품 이름 : <input type="text" name="product-name" id="pname" value=""><br>
+      상품 가격 : <input type="text" name="product-price" size="10" id="pprice" value=""><br>
+      상품 개수 : <input type="text" name="product-count" size="5" id="pcount" value=""> 최대 50개 이하까지 선택 가능<br>
+      배송 방법 : <input type="radio" name="delivery" value="normal">일반 배송 <input type="radio" name="delivery" value="dawn">새벽 배송<br>
+      <input type="button" name="add-cart" value="장바구니 담기" id="add-cart">
+      <input type="button" name="cancel-btn" value="취소" id="cancel">
+    </div>
+    <!-- end -->
+  <script src="hw1.js"></script>
+  </body>
+</html>

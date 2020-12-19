@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="hw2.css">
+</head>
+
+<body>
+    <div id="top">
+        <button type="button" id="add" disabled>Add</button>
+        <div id="btnwrap">
+            <span id="login_id"></span>
+            <button type="button" id="join">Join</button>
+            <button type="button" id="logout">Logout</button>
+        </div>
+    </div>
+
+    <div id="calender">
+        <div id="year_month">
+            <span id="year"></span>
+            <span>년</span>
+            <span id="month"></span>
+            <span>월</span>
+        </div>
+        <table>
+            <tr id="week">
+                <td><span class="date"></span><b>(Sun)</b></td>
+                <td><span class="date"></span><b>(Mon)</b></td>
+                <td><span class="date"></span><b>(Tue)</b></td>
+                <td><span class="date"></span><b>(Wed)</b></td>
+                <td><span class="date"></span><b>(Thu)</b></td>
+                <td><span class="date"></span><b>(Fri)</b></td>
+                <td><span class="date"></span><b>(Sat)</b></td>
+            </tr>
+            <tr id="todo">
+                <td class="todolist"></td>
+                <td class="todolist"></td>
+                <td class="todolist"></td>
+                <td class="todolist"></td>
+                <td class="todolist"></td>
+                <td class="todolist"></td>
+                <td class="todolist"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="join_div">
+        <div class="join_label">id</div>
+        <input type="text" name="id" id="id" pattern="^([A-Za-z0-9]){6,15}"><br>
+        <div class="join_label">password</div>
+        <input type="password" name="password" id="password" pattern="^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*"><br>
+        <div class="join_label"></div>
+        <button type="button" id="login">Login</button>
+        <div class="join_blank"></div>
+        <button type="button" id="signin">SignIn</button>
+    </div>
+
+    <div id="add_div">
+        <div class="add_label">date</div>
+        <input type="date" name="date" id="date">
+        <input type="time" name="time" id="time"><br>
+        <div class="add_label">title</div>
+        <input type="text" name="title" id="title"><br>
+        <div class="add_label">description</div>
+        <input type="text" name="description" id="description"><br>
+        <div class="add_label"></div>
+        <button type="button" id="save">Save</button>
+        <button type="button" id="update">Update</button>
+        <button type="button" id="submit">Submit</button>
+        <button type="button" id="delete">Delete</button>
+        <button type="button" id="cancel">Cancel</button>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous">
+    </script>
+    <script src="hw2.js"></script>
+</body>
+
+</html>

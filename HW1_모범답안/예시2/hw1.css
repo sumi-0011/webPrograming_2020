@@ -1,0 +1,51 @@
+.material-icons {
+  width: 100%;
+  font-size: 50px;
+  color: blue;
+  border: 3px solid #73AD21;
+}
+
+div.delivery {
+  margin: 30px 0px
+}
+
+table {
+  margin: 20px 0px
+}
+
+table, th, td {
+  font-family: arial sans-serif;
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.btn {
+  margin-top: 20px
+}
+
+#regist {
+  position: fixed;
+  width: 400px;
+  height: 250px;
+  top: 50px;
+  left: 50%;
+  margin-left: -200px;
+  margin-right: -125px;
+  padding: 30px;
+  border: 2px outset;
+  border-radius: 5px;
+  background-color: skyblue;
+  visibility: hidden;
+}
+
+span.regist-header {
+  font-size: 20px;
+  color: blue;
+}
+
+td.search-effect {
+  color: red;
+  font-size: 20px;
+  font-weight: 600;
+}

@@ -1,0 +1,45 @@
+
+
+
+table{
+  width: 35%;
+
+  border: 1px solid black;
+  text-align: center;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+
+}
+ td{
+   border: 1px solid black;
+ }
+
+ th{
+    border: 1px solid black;
+  }
+
+  #Enrollment {
+     width: 100%;
+     border: 3px solid #73AD21;
+     text-align: left;
+   }
+
+  #cartP {
+    font-size: 20px;
+    color: blue;
+  }
+
+  .cart {
+    display: none;
+    position: fixed;
+    margin: 0 auto;
+    top: 100px;
+    left: 0;
+    right: 0;
+    background-color: skyblue;
+    padding: 30px;
+    height: 250px;
+    width: 400px;
+    border: 2px outset;
+    border-radius: 5px;
+  }

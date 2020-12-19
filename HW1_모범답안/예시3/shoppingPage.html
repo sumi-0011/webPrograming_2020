@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="MiRae-Gawk">
+    <meta name="keywords" content="shoppingSite">
+    <title>Document</title>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="./shoppingCss.css">
+</head>
+<body>
+    <p id="top">
+        <i class ="material-icons" id = 'shoppingImage'>shopping_cart</i>
+    </p>
+    <br>
+    <br>
+
+    일반배송:
+    <input type="checkbox" name="allSelect1" id="allSelect1" >전체 선택
+    <button type="button" id="selectDelete1">선택 삭제</button>
+    <button type="button" id="deliver1">새벽 배송으로 이동</button>
+    
+    <table class="table" id="firstTable">
+        <thead>
+            <tr>
+                <th>선택</th>
+                <th>상품 이미지</th>
+                <th>상품 이름</th>
+                <th>상품 개별 가격</th>
+                <th>상품 개수</th>
+                <th>상품 구매 가격</th>
+            </tr>
+        </thead>
+        <tbody id="generalBody">
+            <tr>
+                <th colspan="5">총가격</th>
+                <th id="total1"></th>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <br>
+
+    새벽배송:
+    <input type="checkbox" name="allSelect" id="allSelect2" >전체 선택
+    <button type="button" id="selectDelete2" >선택 삭제</button>
+    <button type="button" id="deliver2">일반 배송으로 이동</button>
+    
+    <table class="table" id="secondTable">
+        <thead>
+            <tr>
+                <th>선택</th>
+                <th>상품 이미지</th>
+                <th>상품 이름</th>
+                <th>상품 개별 가격</th>
+                <th>상품 개수</th>
+                <th>상품 구매 가격</th>
+            </tr>
+        </thead>
+        <tbody id="dawnBody">
+            <tr>
+                <th colspan="5">총가격</th>
+                <th id="total2"></th>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+
+    상품 이름:
+    <input type="text" id="searchingName">
+    <br>
+    가격 범위:
+    <input type="text" name="searchingPrice1"> ~
+    <input type="text" name="searchingPrice2">
+    <br>
+    <br>
+    <button id="searching">검색</button>
+    <button id="returnColor">원래 색으로 바꾸기</button>
+    <div id="modal">
+        <div id="modalcontent">
+            <h1 id="registration">상품 장바구니 등록</h1>
+            <label for="productFile">상품 이미지: </label>
+            <input type="file" id="productFile" name=productFile><br>
+            <label for="productName">상품 이름:</label>
+            <input type="text" id="productName" name="productName"><br>
+            <label for="productPrice">상품 가격:</label>
+            <input type="text" id="productPrice" name="productPrice" size=10><br>
+            <label for="productNum">상품 개수:</label>
+            <input type="text" id="productNum" name="productNum" size=5>최대 50개 이하까지 선택 가능<br>
+            배송방법:
+            <input type="radio" name="deliverMethod" value="nomalDeliverCheck">일반 배송
+            <input type="radio" name="deliverMethod" value="dawnDeliverCheck">새벽 배송
+            <br>
+            <br>
+            <button type="button" id="put" >장바구니 담기</button>
+            <button type="button" id="retract" >취소</button>
+        </div>
+    </div>
+    
+    <script src="./shoppingJs.js"></script>
+</body>
+</html>

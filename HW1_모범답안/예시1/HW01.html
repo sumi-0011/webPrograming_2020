@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="HW01.css">
+    <script src="https://kit.fontawesome.com/cf54e27269.js" crossorigin="anonymous"></script>
+    <title>HW01</title>
+  </head>
+  <body>
+
+    <table id='Enrollment'>
+      <tr>
+      <th>
+        <i class='fas fa-shopping-cart' style='font-size:40px;color:blue' id="icon" onclick="icon()"></i>
+      </th>
+      </tr>
+    </table>
+
+    <p>일반배송: <label><input type="checkbox" id="일반_전체선택" value="일반_전체선택" onclick="selectAll_nom()"> 전체 선택</label> <input type='button' name = "일반_전체배송" value='선택 삭제' onclick="selectDelete_nom()"/> <input type='button' value='새벽 배송으로 이동' onclick="moveToDelivery_nom()"/></p>
+
+    <table class="management" id="management1">
+      <tr>
+        <th id="sel_nom">선택</th>
+        <th id="img_nom">상품 이미지</th>
+        <th id="name_nom">상품 이름</th>
+        <th id="price_nom">상품 개별 가격</th>
+        <th id="cnt_nom">상품 개수</th>
+        <th id="allPrice_nom">상품 구매 가격</th>
+      </tr>
+      <tbody id="tbody1">
+
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="5">총 가격</td>
+          <td id="sum_nom">0</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <br><br>
+
+    <p>새벽배송: <label><input type="checkbox" id="새벽_전체선택" value="새벽_전체선택" onclick="selectAll_dawn()"> 전체 선택</label> <input type='button' name = "새벽_전체배송" value='선택 삭제' onclick="selectDelete_dawn()"/> <input type='button' value='일반 배송으로 이동' onclick="moveToDelivery_dawn()"/></p>
+
+    <table class="management" id="management2">
+      <tr>
+        <th id="sel_dawn">선택</th>
+        <th id="img_dawn">상품 이미지</th>
+        <th id="name_dawn">상품 이름</th>
+        <th id="price_dawn">상품 개별 가격</th>
+        <th id="cnt_dawn">상품 개수</th>
+        <th id="allPrice_dawn">상품 구매 가격</th>
+      </tr>
+      <tbody id="tbody2">
+
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="5">총 가격</td>
+          <td id="sum_dawn">0</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <br><br>
+
+    <p>상품 이름: <input type="text" id="상품이름" value="" ></p>
+    <p>가격 범위: <input type="text" id="가격범위1" value=""> ~ <input type="text" id="가격범위2" value=""></p>
+    <input type="button" id="검색" value="검색" onclick="search()">
+    <input type="button" id="원래색으로바꾸기" value="원래 색으로 바꾸기" onclick="color_reset()">
+
+    <div id="cart" class="cart">
+      <p id="cartP">상품 장바구니 등록</p>
+      <form id="cartForm">
+        <label for="img">상품 이미지:</label>
+        <input type="file" name="img" id="img" /><br />
+        <label for="name">상품 이름:</label>
+        <input type="text" name="name" id="name" /><br />
+
+        <label for="price">상품 가격:</label>
+        <input type="text" name="price" id="price" size="12"/><br />
+
+        <label for="cnt">상품 개수:</label>
+        <input type="text" name="cnt" id="cnt" size="8"/>최대 50개 이하까지 선택 가능<br />
+
+        <label>배송 방법:</label>
+        <input
+          type="radio"
+          name="delivery"
+          value="nom_delivery"
+          id="input-radio-normal"
+        />
+        <label for="input-radio-normal">일반 배송</label>
+        <input
+          type="radio"
+          name="delivery"
+          value="dawn_delivery"
+          id="input-radio-special"
+        />
+        <label for="input-radio-special">새벽 배송</label><br />
+        <button
+          type="button"
+          form="cartForm"
+          value="selection"
+          onclick="validatorForm()"
+        >
+          장바구니 담기
+        </button>
+        <button type="button" id="close" form="cartForm" value="close" onclick="closeForm()">취소</button>
+      </form>
+    </div>
+
+    <script  src="HW01.js"></script>
+  </body>
+</html>
