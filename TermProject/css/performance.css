@@ -1,0 +1,143 @@
+body {
+   text-align: center;
+}
+#performance_information {
+    width: 100%;
+    text-align: center;
+    /* margin-left: 10px; */
+    display: flex;
+    justify-content: space-around;
+    margin:0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    overflow: auto;
+}
+#performance_information  .performance{
+    border: 1px solid black;
+    width: 30%;
+    height: 400px;
+    margin:10px auto;
+    min-width: 300px;
+    padding: 0px;
+    max-height: 370px;
+
+}
+#main_content {
+    width: 100%;
+    /* width: auto; */
+    margin: 0 auto;
+}
+
+/* manager용 */
+#manager_add_modal {
+    text-align: left;
+    display: none;
+    background-color: powderblue;
+    border: 2px solid powderblue;
+    font-size:20px;
+    position: fixed;
+    width: 600px;
+    left: 100px;
+    bottom: 100px;
+    padding: 15px;
+    border-radius: 10px;
+    padding-left: 25px;
+}
+#manager_add_modal input {
+    margin: 5px;
+}
+
+.performance_img {
+    width: 300px;
+    height: 100%;
+    max-height: 370px;
+}
+
+
+
+
+
+
+.main_per {
+    margin: 0px;
+}
+
+#main_content .row {
+    width: 100%;
+    margin: 0px;
+    /* min-width: 1000px; */
+}
+#performance_imf_img,
+#performance_imf {
+    border: 1px solid black;
+    height: 350px;
+}
+
+#img_tag,#performance_imf_img {
+    padding: 0px;
+}
+#img_tag {
+    height: 100%;
+}
+#performance_imf{
+    line-height: 50px;
+    padding: 20px;
+    padding-left: 40px;
+    font-size: 20px;
+    text-align: left;
+}
+.info_page_button {
+    float: right;
+    margin: 10px;
+}
+#performance_imf_detail {
+padding: 20px;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 1200px){
+    body {
+        width: 100%;
+        
+    }
+ 
+    #performance_information .performance {
+        width: 40%;
+        min-width: 350px;
+        height: 40%;
+        max-height: 370px;
+    }
+}
+@media screen and (max-width: 1000px){
+     #performance_information .performance {
+        width: 47%;
+        min-width: 250px;
+        /* max-height: 50%; */
+        margin-left: 10px;
+        /* margin-left: 10px; */
+        margin-bottom: 20px;
+        max-height: 370px;
+
+    }
+    #performance_imf_img {
+        width: 300px;
+        margin: 10px auto;
+        
+    }
+}
+@media screen and (max-width: 830px) {
+    
+    #performance_information .performance {
+        width: 70%;
+        max-height: 600px;
+        max-width: 350px;
+        margin: 20px auto;
+        max-height: 370px;
+    }
+    
+    .performance_img, #img_tag {
+    width:300px;
+    max-width: 90%;
+    }
+}

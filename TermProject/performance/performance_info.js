@@ -1,13 +1,16 @@
-window.onload = function () {
+
     showinfo();
     //이벤트 리스너 등록
     document.getElementById('good_input').addEventListener("click", inputGood);
     document.getElementById('move_BackPage').addEventListener("click", moveBackPage);
     
-}
+
 //목록 버튼을 누르면 실행되는 함수
 function moveBackPage() {
+    console.log("cc");
     //현재페이지에서 뒤로가 그전 공연 목록 페이지로이동한다. 
+    sessionStorage.removeItem('now_perform');
+    location.href = "./performance.html";
 }
 //관심공연담기 버튼을 누르면 실행되는 함수
 function inputGood() {
@@ -17,11 +20,17 @@ function inputGood() {
 }
 //공연 txt파일에서 정보를 가져와 화면에 표시해주는 함수
 function showinfo() {
-    var performance_name = document.getElementById("performance_name");
-    var classification = document.getElementById("classification");
-    var performance_date = document.getElementById('performance_date');
-    var performance_time = document.getElementById('performance_time');
-    var clticket_infoa = document.getElementById('ticket_info');
-
-    //txt파일에서 각각의 id의 텍스트 부분에 공연정보를 입력해준다. 
+    var data = sessionStorage.getItem('now_perform');
+    var date_obj = JSON.parse(data);
+    // console.log(date_obj['name']);
+    $('#performance_name').html(date_obj['name']);
+    $('#classification').html(date_obj['clas'])
+    $('#performance_date').html(date_obj['date']);
+    $('#performance_time').html(date_obj['time']);
+    $('#ticket_info').html(date_obj['ticket']);
+    $("#detail_input").html(date_obj['detail']);
+    // $('#img').html(date_obj['image']);
+    // console.log("../image/"+date_obj['image']);
+    $('#img_tag').attr("src","../image/"+date_obj['image']);
+    //각각의 id의 텍스트 부분에 공연정보를 입력해준다. 
 }

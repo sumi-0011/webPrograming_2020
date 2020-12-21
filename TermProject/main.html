@@ -15,12 +15,18 @@
     <header ></header>
     <nav ></nav>
     <div id="main_content" >
-        <aside></aside>
+        <!-- <aside></aside> -->
         <section>
             
         </section>
     </div>
 </body>
-<script src="./menu/menu_load.js"></script>
+<script>
+    $(document).ready(function() {
+    $("header").load("./menu/header.html");
+    $("nav").load("./menu/nav.html");
+    $("footer").load("./menu/footer.html");
+})
+</script>
    
 </html>

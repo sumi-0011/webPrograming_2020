@@ -40,13 +40,25 @@
                     결제 정보 입력
                 </div>
             </div>
-            <div class="a">
+            <div class="money_show">
                 총 결제 금액 : 10000원
             </div>
             <input type="button" value="결제하기" id="pay_Bt">
 
         </div>
-        
+        <div>
+            <script src="https://nsp.pay.naver.com/sdk/js/naverpay.min.js"
+    data-client-id="manager"
+    data-mode="production"
+    data-merchant-user-key="20201222"
+    data-merchant-pay-key="20201222"
+    data-product-name="상품명을 입력하세요"
+    data-total-pay-amount="10000"
+    data-tax-scope-amount="10000"
+    data-tax-ex-scope-amount="0"
+    data-return-url="../main.html">
+</script>
+        </div>
     </div>
     <footer></footer>
 </body>

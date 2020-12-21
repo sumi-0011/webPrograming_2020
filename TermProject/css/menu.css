@@ -1,14 +1,20 @@
 body {
+    float: none;
     margin: 0px;
     display: flex;
     flex-direction: column;
-    width: 900px;
+    width: 1200px;
     height: 100vh;
     padding: 0px ;
     overflow: auto;
+    /* margin: 0 auto; */
+    /* margin-top: 10px; */
     margin-left: auto;
     margin-right: auto;
  
+}
+#body {
+    margin: 0 auto;
 }
 a {
     color: black;
@@ -20,28 +26,26 @@ a:visited { color: black; text-decoration: none;}
 /* a태그에 마우스를 올려놨을떄의 색깔 */
 a:hover { color: blue; text-decoration: underline;}
 
+/* header */
 header {
-   
-    /* background-color: aquamarine; */
     margin: 10px 0px 0px 10px;
-    /* display: inline-block; */
-    /* display: flex; */
-    /* flex-direction: row; */
     padding-left: 20px;
     padding-right: 20px;
-    height: 30px;
-    /* width: 60px; */
+    height: 50px;
+    font-size: 20px;
    
 }
 header #title {
-    font-size:30px;
+    font-size:40px;
     text-align:justify;
     text-justify:inter-word; 
-    width: 100%;
+    /* width: 100%; */
+    float: left;
+
     /* background-color: blueviolet; */
 }
-header #login_page,#join_page {
-    margin-left: 5px;
+header #login_page,#join_page ,#user_id,#logoutBt{
+    margin-left: 10px;
     margin-top: 10px;
     float: right;
 }
@@ -49,7 +53,6 @@ header #login_page,#join_page {
 nav {
     margin: 10px 10px 0px 10px;
     flex-direction: row;
-    /* background-color: blue;   */
     padding: 10px 20px 10px 20px;
     border-bottom: 3px solid black;
 }
@@ -59,6 +62,7 @@ nav {
     padding: 0px;
     list-style: none;
     flex: none;
+    font-size: 21px;
 }
 #menu_list li {
     margin-left: 5px;
@@ -80,14 +84,21 @@ nav {
     /* margin-left: auto; */
     float: right;
 }
+/* main */
 #main_content {
-    margin: 10px 10px 10px 10px;
+    /* margin: 0 auto; */
     display: flex;
     flex: 1;
-    width: 850px;
     text-align: center;
+    /* padding-left: 10px; */
+    /* width: 100%; */
+    margin: 10px auto;
+    width: 95%;
 
 }
+
+
+/* section */
 section {
     margin-left: auto;
     margin-right: auto;
@@ -99,6 +110,7 @@ footer {
     height: 50px;
 }
 aside {
+    float: left;
     width: 150px;
     border: 1px solid black;
 }
@@ -112,17 +124,5 @@ section {
 h1 {
     text-align: center;
 }
-/* 
-#main_content {
-    margin: 10px 10px 10px 10px;
-    display: flex;
-    flex: 1;
-    /* flex: 1 1 0 */
-    /* overflow: auto; */
-/* } */ 
-/* 
-aside {
-    background-color: yellow;
-    width: 200px;
-    flex: 0 0 0;
-    /* border-right: 2px solid black; */
+
+

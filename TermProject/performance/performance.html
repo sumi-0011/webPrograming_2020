@@ -6,36 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/menu.css">
+    <!-- 부트스트랩 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/performance.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
     </script>
     <style>
+     
       
-        .performance {
-            width: 200px;
-            height: 200px;
-            border: 1px solid black;
-            float: left;
-        }
-       
     </style>
 </head>
 
-<body>
-    <header ></header>
-    <nav ></nav>
-    <div id="main_content" >
-        <div id="performance_information">
-            공연정보
-            <br>
-            <div class="performance" >공연1</div>
-            <div class="performance" >공연2</div>
-            <div class="performance" >공연3</div>
-    
+<body id="body">
+    <header></header>
+    <nav></nav>
+    <h1> 공연정보</h1>
+    <h4>
+        <input type="button" value="오늘 공연" id="prev_list" class="listBt">
+    <input type="button" value="전체 공연" id="all_list" class="listBt">
+    </h4>
+    <br>
+    <div id="main_content" class="container">
+
+  
+        <br>
+        <div id="performance_information" class="row">
         </div>
+
     </div>
+    <!-- manager용  -->
+    <div id="manager_add_modal">
+        공연 이미지 : <input type="file" name="fname" id="fname"><br>
+        공연 이름 : <input type="text" name="performance_name" id="performance_name" value=""><br>
+        공연 구분 : <input type="text" name="performance_classification" id="performance_classification" value=""><br>
+        
+        공연 날짜 : <input type="date" name="performance_date" id="performance_date"> <input type="time" name="performance_date_time" id="performance_data_time"><br>
+        공연 시간 : <input type="number" name="performance_time" id="performance_time"> <br>
+        티켓 정보 : <input type="text" name="performance_ticket" id="performance_ticket" value=""><br>
+        추가 정보 :  <textarea name="detail" id="detail" cols="20" rows="2"></textarea><br>
+        <input type="button" name="add_performance" value="공연 추가"  id="add_performanc_bt">
+        <input type="button" name="cancel_performance_bt" value="취소" id="cancel_performance_bt">
+      </div>
+    <input type="button" value="공연 추가" id="manager_performance_add" >
+    
+    <form method="POST" action="./performanceAdd.php">
+    <input type="submit"></form>
     <footer></footer>
 </body>
 <script src="../menu/menu_load.js"></script>
 <script src="./performance.js"></script>
+
 </html>

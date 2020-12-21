@@ -1,0 +1,50 @@
+#main_content {
+    font-size: 20px;
+    text-align: unset;
+}
+#full {
+    width: 100%;
+}
+#select_list {
+    margin: 20px 0px;
+    min-height: 100px;
+    line-height: 150%;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+/* step 2 */
+#seat_table {
+    border-collapse: collapse;
+    text-align: center;
+}
+#seat_table td {
+    /* border: 1px solid black; */
+    width: 50px;
+    height: 50px;
+}
+.seat_yes_R, .seat_yes_S {
+    border: 1px solid black;
+}
+.seat_yes_R {
+    background-color: LightYellow;
+}
+.seat_yes_S {
+    background-color: LavenderBlush;
+}
+.seat_do_R, .seat_do_S {
+    background-color:MediumPurple;
+}
+#table_div, #div1 {
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+}
+#div1 {
+    height: 50px;
+}
+#table_div {
+    padding: 10px;
+}
+#show {
+    border: 1px solid black;
+}

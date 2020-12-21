@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+  <meta charset="utf-8">
+  <title>HTML/CSS 실습 퀴즈</title>
+  <link rel="stylesheet" type="text/css" href="final_01.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+ 
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <h1 id="header">영화 예매 페이지</h1>
+      <div id="firstLayout" class="col-xs-12 col-md-12">
+        <h2>영화 정보</h2>
+        <div id="movielinks">
+          <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=190010#" target="_blank"><img src="./테넷.jpg"
+              alt="테넷"><br>테넷</a>
+          <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=185917" target="_blank"><img src="./반도.jpg"
+              alt="테넷"><br>반도</a>
+          <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=187321" target="_blank"><img src="./1917.jpg"
+              alt="테넷"><br>1917</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div id="secondLayout" class="col-xs-6 col-md-6">
+        <h2>영화 선택</h2>
+        <table>
+          <tr>
+            <th>선택</th>
+            <th>영화 제목</th>
+            <th>극장</th>
+          </tr>
+          <tr>
+            <td><input type="radio" name="radio" id="" value="10" checked></td>
+            <td>테넷</td>
+            <td>둔산 롯데시네마</td>
+          </tr>
+          <tr>
+            <td><input type="radio" name="radio" value="20" id=""></td>
+            <td>반도</td>
+            <td>대전 CGV</td>
+          </tr>
+          <tr>
+            <td><input type="radio" name="radio" value="30" id=""></td>
+            <td>1917</td>
+            <td>대전 메가박스</td>
+          </tr>
+        </table>
+      </div>
+      <div id="thirdLayout" class="col-xs-6 col-md-6">
+        <h2>인원 선택</h2>
+        <label for="adult">성인</label>
+        <input type="number" name="adult" id="adult" value="0">
+        <br>
+        <label for="youth">청소년</label>
+        <input type="number" name="youth" id="youth" value="0">
+      </div>
+    </div>
+    <div class="row">
+      <div id="fourthLayout" class="col-xs-12 col-md-7">
+        <h2>좌석 예매</h2>
+        <p><strong>코로나19</strong> 관련 사회적 거리두기 사회적 거리두기 2단계 지침에 따라 <strong>'좌석 한칸 띄어앉기'</strong>를 시행합니다.</p>
+        <ol>
+          <li> 좌석 정보
+            <ul id="info">
+              <li>예매 가능한 좌석 : <span>흰색</span></li>
+              <li>선택한 좌석 : <span>파란색</span></li>
+              <li>이미 예매된 좌석 : <span>빨간색</span></li>
+              <li>예매 불가능한 좌석 : <span>회색</span></li>
+            </ul>
+          </li>
+          <li> 좌석 금액
+            <ul>
+              <li>성인 : 9,000원</li>
+              <li>청소년 : 8,000원</li>
+            </ul>
+          </li>
+        </ol>
+        <h4>좌석 배치도</h4>
+        <table id="seat_table10" >
+         </table>
+        <table id="seat_table20" class="displayNone">
+         </table>
+        <table id="seat_table30" class="displayNone">
+         </table>
+        <button type="button" class="btn" id="ticketingBT">예매</button>
+      </div>
+
+      <div id="fifthLayout" class="col-xs-12 col-md-5">
+        <h2>영화 확인 및 취소</h2>
+        <button type="button" class="btn" id="deleteBt">취소</button>
+        <table id="price_table">
+          <tr>
+            <th></th>
+            <th>영화 제목</th>
+            <th>인원</th>
+            <th>좌석</th>
+            <th>결제 금액</th>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="final_01.js"></script>
+</body>
+
+</html>

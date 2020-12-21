@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/performance.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" -->
+        <!-- integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+</head>
+
+<body>
+    <header></header>
+    <nav></nav>
+ 
+    공연정보
+    <hr>
+    <div id="main_content" class="main_per container">
+        <div class="row">
+            <div id="performance_imf_img" class="col-md-3">
+                <img alt="poster" id="img_tag">
+                <br>
+            </div>
+            <div id="performance_imf" class="col-md-9">
+                <table id="performance_table">
+                    <tr>
+                        <td>공연이름 : </td>
+                        <td id="performance_name">대관공연</td>
+                    </tr>
+                    <tr>
+                        <td>공연구분 : </td>
+                        <td id="classification">대관공연</td>
+                    </tr>
+                    <tr>
+                        <td>공연날짜 : </td>
+                        <td id="performance_date">2020년 11월 3일(화) / 1일 1회</td>
+                    </tr>
+                    <tr>
+                        <td>공연시간 : </td>
+                        <td id="performance_time">19:30</td>
+                    </tr>
+                    <tr>
+                        <td>티켓정보 : </td>
+                        <td id="ticket_info">전석 1만원</td>
+                    </tr>
+                </table>
+                <input type="button" value="관심공연담기" id="good_input" class="info_page_button">
+                <input type="button" value="목록" id="move_BackPage" class="info_page_button">
+            </div>
+            <div id="performance_imf_detail">
+                <span>공연소개</span><br><br>
+                <span id="detail_input"></span>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+<script src="../menu/menu_load.js"></script>
+<script src="./performance_info.js"></script>
+
+</html>

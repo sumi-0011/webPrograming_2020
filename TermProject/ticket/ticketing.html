@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/ticket.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
     </script>
 </head>
@@ -14,23 +15,31 @@
     <header ></header>
     <nav ></nav>
     <div id="main_content" >
-        <div>예매 정보
-        <input type="button" value="-> 좌석선택" id="pageChage_seat">
+       <div id="full">
+           <div>
+            <span>예매 정보</span>
+            <br>
+            <span>공연 일자 : </span><input type="date" name="selectDate" id="selectDate"> <input type="button" value="선택" id="date_bt">
+            
+        </div>
+    
+        <div id="select_list">
+            
         </div>
         
+           <div id="select_perfom">
+               <span>공연 이름 : </span> <span id="perform_name"> </span>  <br>
+                <span>공연 일시 : </span> <span id="perform_date"></span> <br>
+                <img src="" alt="" id="perform_img">
+           </div>
+           <input type="button" value="-> 좌석선택" id="pageChage_seat">
+        
+        </div>
     </div>
     <footer></footer>
 </body>
 <script src="../menu/menu_load.js"></script>
-<script>
-    window.onload =function() {
-    // 인원,좌석 선택 화면으로 이동
-    document.getElementById('pageChage_seat').addEventListener("click",function() {
-        location.href = "./ticket_step2.html"
-    });
 
-}
-</script>
-<!-- <script src="./ticket/ticket.js"></script> -->
+<script src="./ticket.js"></script>
    
 </html>
