@@ -1,52 +1,51 @@
 <?php 
+
+// POST로 공연 정보 또는 어떤 공연 정보를 수신받을 것인지 알아와 
+//그것에 따라 반환되는 값들이 달라진다. 
 function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
 }
-$json_data = test_input($_POST['sendData']);
-$replace_json = str_replace("&quot;", '"',$json_data); 
-// $json_data = "today";
-// $json_data = "{&quot;name&quot;:&quot;대전시립합창단&quot;,&quot;clas&quot;:&quot;음악&quot;,&quot;date&quot;:&quot;2020-12-22 19:30&quot;,&quot;time&quot;:&quot;90&quot;,&quot;ticket&quot;:&quot;R석 10,000원 S석 5,000원&quot;,&quot;image&quot;:&quot;img5.jpg&quot;,&quot;detail&quot;:&quot;※ 본 공연은 예매 개시일 시점 객석의 30%를 오픈하여 운영합니다. 이후 코로나19 상황 사회적 거리두기 단계 변동에 따라 좌석변경(축소) 및 취소가 진행될 수 있습니다. 관객 여러분의 양해 부탁드립니다.n※ 공연장 입장 시 발열체크 후 QR체크인 또는 명단을 작성하며 공연장 내 마스크 착용은 필수입니다.n※ 객석 거리두기로 인해 동반인과 좌석을 붙여 앉으실 수 없습니다.&quot;}
-// ";
-// $json_data = '{"name":"나빌레라콘서트","clas":"재즈","date":"2020-11-21 11:09","time":"90","ticket":"R석 7만원,S석 5만원,A석 3만원","image":"img4.jpg"}';
+$json_data = test_input($_POST['sendData']);                //공연 정보를 json형태로 변환하여 php로 넘겨준다. $_POST로 받아준다. 
+$replace_json = str_replace("&quot;", '"',$json_data);      //인코딩하는 과정에서 해킹 방지를 위하여 &quot;가 섞인 json이 되었을수도 있기때문에 치환해준다. 
 
-$url ='../info/performanceInfo.json';
+$url ='../info/performanceInfo.json';                       //저장할 파일 정보
 $bol = true;
-if($json_data == "all") {
+if($json_data == "all") {       //전체 공연
     if(file_exists($url)) {
-        echo file_get_contents('../info/performanceInfo.json');
+        echo file_get_contents($url);   //전체 공연 정보가 개행을 기준으로 묶여있는 문자열을 반환
     }
     else {
         echo "file_false";
     }
 }
-else if($json_data =="today") {
+else if($json_data =="today") { //오늘 공연
     if(!file_exists($url)) {
         echo "file_false";
     }
     else {
     $array = array();
-    $data  = json_decode($json_data);
-    $file = explode("\n",file_get_contents('../info/performanceInfo.json'));
+    $data  = json_decode($json_data);               //입력값을 해독해 저장한다. 
+    $file = explode("\n",file_get_contents($url));  //개행을 기준으로 나눈다. 
     $today = date("Y-m-d");
     // print_r($data);
     for($i=0;$i<count($file);$i++) {
         if($file[$i]!=null){
             $temp = json_decode($file[$i]); 
-            $t = explode(" ",($temp->date));
-            if($t[0]==$today) {
+            $t = explode(" ",($temp->date));        //날짜만 알면 되기 때문, $t[0] 은 2020-12-12 형식의 문자열이다. 
+            if($t[0]==$today) {                     //현재 날짜와 공연 날짜가 같으면 배열에 push한다. 
                 $bol = false;
                 array_push($array,$file[$i]);
             }
         } 
       }
     //   print_r($array);
-      if($bol) {
+      if($bol) {    //배열에 추가한 값이 하나도 없는것
           echo "false";
       }
-      else {
+      else {        //array를 개행을 기준으로 문자열로 묶어 리턴해준다. 
         //   print_r($array);/
           echo implode("\n",$array);
 
@@ -59,30 +58,31 @@ else {
     // $seat = "ss";
     if(file_exists($url))  {
         $data = json_decode($replace_json);
-        $file = explode("\n",file_get_contents('../info/performanceInfo.json'));
+        $file = explode("\n",file_get_contents($url));
         for($i=0;$i<count($file);$i++) {
             if($file[$i]!=null){
                 $temp = json_decode($file[$i]); 
                 // print_r($temp);
-                if($temp->date==$data->date) {
-                    $bol = false;
+                if($temp->date==$data->date) {  //동일한 날짜+시간 인 공연이 있는지 확인
+                    $bol = false;               //있으면 bol값을 false로 바꾸고 탐색을 끝낸다. 
                     break;
                 }
             } 
           }
-          $arr = [$data->date,$seat];
-          if($bol == true) {
-              //파일에 시트정보 추가하기
+          $arr = [$data->date,$seat];          //arr에 배열의 원소로 날짜와, 시트정보를 추가해주고
+          if($bol == true) {                    //동일한 공연이 없었으면
+              //파일에 시트정보 추가하기        //좌석정보와, 공연정보를 파일에 각각 저장한다
               file_put_contents($url_seat,json_encode($arr)."\n",FILE_APPEND);
-              file_put_contents("../info/performanceInfo.json",$replace_json."\n", FILE_APPEND);
-              echo $replace_json;
+              file_put_contents($url,$replace_json."\n", FILE_APPEND);
+              echo $replace_json;               //반환값은 저장한 공연정보
           }
     }
     else {
-        file_put_contents("../info/performanceInfo.json",$replace_json."\n", FILE_APPEND);
+        //파일이 없는경우에는 파일을 새로 생성하면서 값을 저장하면 된다
+        file_put_contents($url,$replace_json."\n", FILE_APPEND);
         echo $replace_json;
     }
-    if($bol == false) {
+    if($bol == false) { //false인 경우는 동일한 공연이존재하는 경우이다. 
         echo "false2";
     }
 }

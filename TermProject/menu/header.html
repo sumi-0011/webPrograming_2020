@@ -1,35 +1,6 @@
 <!-- title을 화면에 보여주고, 회원가입과 로그인 페이지로 이동할수있게한다  -->
-<span id="title"><a href="http://localhost/TermProject/main.html">Arts Center</a></span>
-<span id="join_page"><a href="http://localhost/TermProject/login&join/join.html">join</a></span>
-<span id="login_page"><a href="http://localhost/TermProject/login&join/login.html">login</a></span>
-<span id="logoutBt" display="none">logout</span>
+<span id="title"><a href="../main/main.html">Arts Center</a></span>
+<span id="join_page" display="none"><a href="../login&join/join.html">join</a></span>
+<span id="login_page" display="none"><a href="../login&join/login.html">login</a></span>
+<span id="logoutBt" display="none"></span>
 <span id="user_id" display="none"></span>
-
-<script>
-    
-    window.onload = function() {
-        display_User();
-        $("#logoutBt").click(ClickLogout);
-    }
-    //로그인이 되어있으면 user의 name을 화면위에 출력
-function display_User() {
-    if(sessionStorage.getItem("userID") != null) {
-        $('#join_page').hide();
-        $('#login_page').hide();
-        $('#user_id').html(sessionStorage.getItem("userID"));
-        $('#logoutBt').show();
-    }
-    else {
-        $('#user_id').hide();
-        $('#logoutBt').hide();
-        $('#join_page').show();
-        $('#login_page').show();
-    }
-}
-function ClickLogout() {
-    sessionStorage.removeItem('userName');
-    sessionStorage.removeItem('userID');
-    alert("로그아웃되었습니다.");
-    display_User();
-}
-</script>

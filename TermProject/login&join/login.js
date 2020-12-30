@@ -11,6 +11,7 @@ function ClickLogin() {
   //ajax를 이용해 리로드 없이 확인하게 한다.
   //php를 실행해 일치하는 로그인 정보가 있으면 로그인에 성공하였다는 메세지를 띄우고 메인으로 넘어간다.
   //일치하는 로그인정보가 없거나 비밀번호가 다르면 입력한아이디가 존재하지 않는다거나 비밀번호가 틀렸다는 메세지를 띄운후 다시 입력하게 한다.
+  //readTextFile메소드를 이용해 인자값에 따른 list를 리턴받아 여부 체크를 한다. 
   var id_list = readTextFile("id").split("\n");
   var pwd_list = readTextFile("pwd").split("\n");
   var id = $("#login_id").val();
@@ -27,11 +28,12 @@ function ClickLogin() {
     sessionStorage.setItem("userName", name);
     sessionStorage.setItem("userID", id);
     alert(name + "님 환영합니다.");
-    location.href = "../main.html";
+    location.href = "../main/main.html";
   } else {
     alert("비밀번호가 틀립니다. 다시입력해주세요.");
   }
 }
+//파일에서 인자값(ex : id)의 리스트를 꺼내 리턴해주는 메소드
 function readTextFile(readData) {
   var result = "";
   $.ajax({
@@ -42,7 +44,7 @@ function readTextFile(readData) {
     success: function (data) {
       result = data;
     },
-    //에러가 생기면 무슨 error인지 알려줌
+    //에러가 생기면 무슨 error인지 알려준다.
     error: function (jqXHR, textStatus, errorThrown) {
       console.log(jqXHR.responseText);
     },

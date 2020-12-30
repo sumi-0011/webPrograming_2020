@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step3</title>
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/ticket.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+
+</head>
+
+<body>
+    <header></header>
+    <nav></nav>
+    <div id="main_content">
+        <div id="seat_info_guide">
+            예매 좌석 
+            <select name="seat_select" id="seat_select">
+                <option value="none">선택안함</option>
+            </select><br><br>
+            <input type="button" value="main으로 가기" id="move_main">
+        </div>
+        <br>
+        <div id="table_div_guide">
+            <table id="seat_table_guide">
+
+            </table>
+            <!-- <canvas id="canvas" style="border:1px solid #d3d3d3;">
+
+            </canvas> -->
+            
+        </div>
+    </div>
+
+    <footer></footer>
+</body>
+<script src="./seat_guide.js"></script>
+<script src="../menu/menu_load.js"></script>
+
+</html>
